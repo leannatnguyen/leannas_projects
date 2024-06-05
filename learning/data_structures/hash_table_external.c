@@ -13,7 +13,7 @@ typedef struct person{
     struct person *next;
 } person;
 
-person *hash_table[TABLE_SIZE];
+person *hash_table[TABLE_SIZE]; //makes array called hash table of data type person
 
 void init_hash_table(){
     for (int i = 0; i < TABLE_SIZE; i++){
@@ -50,8 +50,8 @@ bool hash_table_insert(person *p){
         return false;
     }
     int i = hash(p->name); //generate the unique input (key)
-    p->next = hash_table[i];
-    hash_table[i] = p;
+    p->next = hash_table[i]; //pointer to next person = hash_table[key] (what used to be there, likely null)
+    hash_table[i] = p; //hash table[i] now is the new person
     return true;
 }
 
