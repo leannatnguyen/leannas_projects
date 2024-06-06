@@ -135,3 +135,65 @@ uint8_t i2c_read_data(uint8_t device_address, uint8_t register_address) {
 
 These questions cover a variety of fundamental topics in embedded systems, such as memory management, real-time programming, interfacing with peripherals, and handling hardware constraints.
 */
+
+/*
+Certainly! Here are some embedded software coding interview questions that cover various aspects of embedded systems, including hardware interfacing, real-time operating systems, low-level programming, and debugging:
+
+Basic Concepts
+What are the differences between microcontrollers and microprocessors?
+Explain the concept of interrupt latency. How can it be minimized?
+Describe the differences between polling and interrupt-driven I/O.
+What is a watchdog timer, and why is it used?
+Explain the concept of memory-mapped I/O.
+
+C Programming
+Write a C function to reverse a string in place.
+Explain the difference between volatile and const keywords in C.
+How do you prevent a structure from being padded in C?
+Write a function to count the number of set bits in an integer.
+Describe how pointers work in C. What is a null pointer?
+
+Embedded Systems Specific
+How do you handle debouncing a button in embedded systems?
+What is the purpose of a bootloader in embedded systems?
+Explain how an RTOS scheduler works.
+What are the different types of memory in an embedded system?
+How do you optimize code for power consumption in an embedded system?
+
+Real-Time Operating Systems (RTOS)
+What are the differences between a task, a thread, and a process in an RTOS?
+Explain priority inversion and how it can be handled in an RTOS.
+What is a semaphore, and how is it used in an RTOS?
+Describe the concept of a critical section and how it is managed in an RTOS.
+What is a context switch, and how does it occur in an RTOS?
+
+Debugging and Testing
+What methods do you use to debug embedded software?
+Explain how you would use a logic analyzer in debugging.
+Describe how you would perform unit testing in an embedded environment.
+What are the common causes of stack overflow in embedded systems?
+How do you diagnose and fix memory leaks in embedded systems?
+
+Hardware Interfacing
+Explain how I2C and SPI protocols work. What are the key differences?
+Write a function to initialize and read data from an ADC.
+How do you interface an LCD with a microcontroller?
+What is DMA, and how is it used in embedded systems?
+Describe the process of UART communication.
+
+Advanced Topics
+What are the benefits and drawbacks of using C++ in embedded systems?
+Explain the concept of Direct Memory Access (DMA) and its advantages.
+How do you implement a simple state machine in C?
+Describe the difference between little-endian and big-endian formats.
+What is memory alignment, and why is it important?
+
+Practical Coding Tasks
+Implement a circular buffer in C.
+Write a program to interface with a digital temperature sensor (e.g., using I2C).
+Design a simple PWM controller using a microcontroller's timer.
+Write a function to read and write to EEPROM.
+Implement a software UART in C.
+These questions are designed to test a wide range of skills and knowledge that are relevant to embedded software development. Good luck with your interview preparation!
+
+*/
