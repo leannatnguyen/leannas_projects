@@ -1,0 +1,98 @@
+Multithreading in embedded systems involves running multiple threads or
+tasks concurrently on a single CPU, which can improve the responsiveness
+and efficiency of an application by handling different tasks simultaneously
+
+1. What is multithreading?
+- the ability of a cpu to execute multiple threads concurrently, where a
+thread is the smallest unit of processing. In embedded systems, it allows
+the system to perform multiple tasks seemingly at the same time
+    -thread: lightweight process that can run independently, sharing the
+    same memory space
+    -multithreading: running multiple threads in a way that they
+    share CPU time, often through context switching
+
+2. why use multithreading in embedded systems?
+-benefits:
+    -improved responsiveness: threads can be dedicated to handling diff
+    tasks like i/o ops, data processing, and UI management
+    -efficiency: cpu time can be better utilized, esp in systems with idle
+    periods for i/o operations
+    -modularity: diff functionalities can be separated into threads, making
+    the system more organized and easier to maintain
+-challenges:
+    -complexity: managing multiple threads requires careful design to
+    avoid issues like race conditions + deadlocks
+    -resource constraints: emb. sys. often have limited cpu power and
+    memory, making efficient thread management crucial
+
+3. Key concepts in multithreading:
+-threads and processes:
+    -thread: shares the same address space with other threads in same
+    process
+    -process: indep. execution unit with its own memory space, multiple
+    threads can exist within a single process
+-context switching:
+    -the process of saving the state of a currently running thread and 
+    restoring the state of the next thread to run. essential for 
+    multitasking but incurs overhead
+-scheduling:
+    -scheduler: part of the OS or runtime that decides which thread runs
+    next
+        -can use diff algos like round robin, priority-based, etc.
+
+4. Implementing multithreading
+-real-time operating system (RTOS)
+    -rtos: os designed for real-time applications, providing services
+    like multitasking, intertask comm, and scheduling
+    -ex: FreeRTOS, miicrium uC/OS, VxWorks, ThreadX
+-using FreeRTOS
+    -it's a popular RTOS for embedded systems, providing multithreading
+    capabilities
+    -creating a task:
+        -Tasks in FreeRTOS are equivalent to threads
+-using Bare-Metal approach:
+    -in simpler systems, multithreading can be achieved without an rtos
+    using a cooperative scheduling approach
+
+5. Managing multithreading
+-synchroniztion mechanisms:
+    -mutex: protects shared resources to prevent race conditions
+    -semaphore: synchronizes tasks, signaling events
+-communication mechanisms:
+    -queues: used to send data between tasks
+
+6. Best practices
+-task design:
+    -avoid blocking calls: use delays or non-blocking methods
+    -minimize resource usage: keep stack size and memory usage to a min
+    -use priorities wisely: assign appropriate priorities to tasks based
+    on their importance and timing requirements
+-debugging and testing:
+    -use debugger tools: tools like JTAG debuggers and trace tools
+    -test concurrency issue: check for race conditions, deadlocks,
+    priority inversions
+-optimize context switching:
+    -reduce context switch frequency: minimize context switching to save
+    cpu cycles
+    -optimize critical sections: keep critical sections short to reduce
+    blocking times for other threads:
+
+7. Real-world application examples
+-sensor data acquisition and processing
+    -sensor thread: acquires data from sensors periodically
+    -processing thread: processes the acquired data
+    -communication thread: handles comm w/ other systems or displays
+-embedded gui systems:
+    -ui thread: manages the user interface
+    -event thread: handles user input events
+    -background thread: manages background tasks like data synchronization
+
+SUMMARY:
+-multithreading in embedded systems involves multiple tasks concurrently
+to improve responsiveness, efficiency, and modularity. Using an RTOS
+like FreeRTOS simplifies task management, scheduling and synchronization,
+but a bare-metal approach can be used for simpler systems.
+Key concepts include context switching, scheduling, synchronization using
+mechanisms like mutexes and semaphores. Effective multithreading requires
+careful design to manage resources and avoid concurrency issues, making
+embedded systems more capable and responsive.

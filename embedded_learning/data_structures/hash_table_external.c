@@ -58,7 +58,10 @@ bool hash_table_insert(person *p){
 // find a person in the table by their name
 person *hash_table_lookup(char *name){
     int index = hash(name); // kinda produces a key
-    
+    if (hash_table[index] != NULL){
+        return hash_table[index];
+    }
+    return NULL;
 }
 
 //delete a person from the hash table

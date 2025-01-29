@@ -141,7 +141,28 @@ Certainly! Here are some embedded software coding interview questions that cover
 
 Basic Concepts
 What are the differences between microcontrollers and microprocessors?
+    -microcontrollers: integrated circuit that include a CPU, memory, and peripherals on a single chip
+        -lower clock speed
+        -low power consumption
+        -embedded systems (home appliances, automotive)
+    -microprocessors: cpu only, relies on external memory and perhiperals
+        -higher clock speed
+        -high power consumption, requires cooling solutions
+        -general purpose computing (pcs, smartphones)
+
 Explain the concept of interrupt latency. How can it be minimized?
+-interrupt latency: time delay between occurence of an interrupt and start of
+interrupt service routines (ISR) that handles it.
+    -comprised of several comoponents:
+        -interrupt detection time: time taken by the hardware to recognize
+        and signal CPU that interrupt occurred
+        -interrupt ack time: time take by cpu to ack interrupt request and begin
+        context switch
+        -context saving time: time required to save current state of CPU so
+        it can resume after handling interrupt
+        -interrupt vector fetching time: time required to fetch address of ISR
+        -isr execution time: time taken to execute initial instructions of isr
+-factors that affect interrupt latency
 Describe the differences between polling and interrupt-driven I/O.
 What is a watchdog timer, and why is it used?
 Explain the concept of memory-mapped I/O.
