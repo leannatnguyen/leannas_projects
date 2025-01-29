@@ -1,1 +1,4 @@
 *-noshare
+_build/
+*.d
+*.o
